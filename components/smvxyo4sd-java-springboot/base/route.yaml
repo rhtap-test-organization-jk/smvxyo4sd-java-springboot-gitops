@@ -1,0 +1,18 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata: 
+  labels: 
+    app.kubernetes.io/instance: smvxyo4sd-java-springboot
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: smvxyo4sd-java-springboot 
+  name: smvxyo4sd-java-springboot
+spec:
+  port:
+    targetPort: 8081 
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: smvxyo4sd-java-springboot
+    weight: 100 
